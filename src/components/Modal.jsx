@@ -34,15 +34,12 @@ export default function Modal({ modal, setModal, selected }) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all max-h-[90vh] max-w-[90vw] w-full">
-                <div className="flex justify-center">
-                  <iframe
-                    className="w-full h-full max-h-[90vh] max-w-[90vw] h-[1400px] rounded-md"
-                    loading="lazy"
-                    allowFullScreen
-                    referrerPolicy="no-referrer-when-downgrade"
-                    src={URL}
-                  ></iframe>
+              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all w-full max-w-7xl">
+                <div className="flex flex-col justify-center">
+                  <iframe className="rounded-t-md" height={600} loading="lazy" allowFullScreen referrerPolicy="no-referrer-when-downgrade" src={URL}></iframe>
+                  <button onClick={() => setModal(false)} className="w-full bg-indigo-500 text-white p-2">
+                    Close modal
+                  </button>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
